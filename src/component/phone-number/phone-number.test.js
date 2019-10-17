@@ -7,6 +7,7 @@ describe('Phone number', () => {
     const div = document.createElement('div')
     render(<PhoneNumber />, div)
 
-    expect(div.textContent).toBe('Phone number')
+    expect(div.querySelector('label').textContent).toBe('Phone number')
+    expect(div.querySelector('input').type).toBe('number')
   })
 })
