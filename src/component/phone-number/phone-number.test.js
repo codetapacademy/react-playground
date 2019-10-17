@@ -1,9 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { PhoneNumber } from '.'
-import { toHaveAttribute, toHaveTextContent } from '@testing-library/jest-dom'
-
-expect.extend({ toHaveAttribute, toHaveTextContent })
+import '@testing-library/jest-dom/extend-expect'
 
 describe('Phone number', () => {
   it('renders the component', () => {
