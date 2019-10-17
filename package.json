@@ -29,6 +29,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/dom": "^6.8.1",
     "@testing-library/jest-dom": "^4.1.2"
   }
 }
