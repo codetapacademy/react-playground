@@ -9,10 +9,8 @@ describe('Phone number', () => {
     const div = document.createElement('div')
     render(<PhoneNumber />, div)
 
-    const input = queries.getByLabelText(div, 'Phone number')
+    const input = queries.getByLabelText(div, /Phone number/i)
 
-    expect(div.querySelector('label').textContent).toBe('Phone number')
-    expect(div.querySelector('label')).toHaveTextContent('Phone number')
     expect(input.type).toBe('number')
     expect(input).toHaveAttribute('type', 'number')
   })
