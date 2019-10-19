@@ -15,15 +15,13 @@ describe('<Niceform />', () => {
     const inputName = getByLabelText(/your name/i)
     const inputButton = getByText(/talk to me/i)
     fireEvent.change(inputName, { target: { value: 'Marian' } })
-    debug(inputName)
     fireEvent.click(inputButton)
 
     await wait(() => {
-      debug()
       expect(queryByTestId('message')).toHaveTextContent(inputName.value)
     })
 
-    // expect(mockGetMessage).toHaveBeenCalledTimes(1)
+    expect(mockGetMessage).toHaveBeenCalledTimes(1)
 
     // expect(result).toHaveNoViolations()
   })

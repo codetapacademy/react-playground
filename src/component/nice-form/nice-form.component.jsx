@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
+import { getMessage as o } from './nice-form.api'
 
-const NiceForm = ({ getMessage }) => {
+const NiceForm = ({ getMessage = o }) => {
   const [name, updateName] = useState('')
   const [message, updateMessage] = useState('')
   const myRef = useRef()
