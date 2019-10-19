@@ -1,12 +1,15 @@
 import React from 'react'
-import { render } from 'react-dom'
 import { PhoneNumber } from '.'
+import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/react/cleanup-after-each'
+import { render } from '@testing-library/react'
 
 describe('Phone number', () => {
   it('renders the component', () => {
-    const div = document.createElement('div')
-    render(<PhoneNumber />, div)
-
-    expect(div.textContent).toBe('Phone number')
+    const { getByLabelText } = render(<PhoneNumber />)
+    const input = getByLabelText(/Phone number/i)
+    
+    expect(input.type).toBe('number')
+    expect(input).toHaveAttribute('type', 'number')
   })
 })
